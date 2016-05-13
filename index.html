@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+<head>
+<title>越成长 越青春</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script src="js/wechat.js"></script>
+<script>
+var shareAPI = 'http://www.qianshiedu.com/wechat/api.php';		 
+var rootURL = 'http://www.bit01.cn/herbalife';				
+var shareData = {	
+	link:rootURL,							
+	title:'越成长 越青春',				  
+	desc:'TODAY微杂志5月刊带你见证成长的惊喜！',					
+	imgUrl:rootURL+'/img/share.jpg'			  
+};
+var wechat = new Wechat({
+	apiURL:shareAPI,
+	data:shareData
+});
+</script>
+</body>
+</html
