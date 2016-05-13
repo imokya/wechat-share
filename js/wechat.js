@@ -52,6 +52,7 @@
 			apiURL:'http://uniqueevents.sinaapp.com/wx/getJsAPIA.php?callback=?',
 			wxURL:'http://res.wx.qq.com/open/js/jweixin-1.0.0.js',
 			debug:false,
+			type:'post',
 			data:{
 				link:location.href,
 				title:'',
@@ -86,7 +87,7 @@
 	proto.initShare = function() {
 		var conf=this.config,self=this; 
 		var params = 'url='+encodeURI(location.href);
-		getJson(conf.apiURL,'post',params,function(data){
+		getJson(conf.apiURL,conf.type,params,function(data){
 			if(wx) {
 				wx.config({
 					debug:conf.debug, 
