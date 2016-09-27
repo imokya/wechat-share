@@ -1,1 +1,1 @@
-var wechat = (require('./lib/wechat'));
+var wechat = new (require('./lib/wechat'));

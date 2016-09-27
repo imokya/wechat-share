@@ -37,7 +37,8 @@ var loadXHR = function(params) {
 	}
 	xhr.open(params.type,params.url,true);
 	xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
-	xhr.send(params.data);
+	var data = serialize(params.data);
+	xhr.send(data);
 }
 
 var loadScript = function(params) {
@@ -53,16 +54,18 @@ var loadScript = function(params) {
 	script.onerror = function() {
 		conf.error && conf.error();
 	}
-	var url = conf.url;
-	if(conf.data) {
-		var data = '?';
-		for(var i in conf.data) {
-			data += i+'='+conf.data[i]+'&';
-		}
-		url += data.split('&').slice(0,-1).join('&');
-	}
+	var url = conf.data ? conf.url+'?'+serialize(conf.data) :
+						  conf.url;
 	script.src = url;
 	document.body.appendChild(script);
+}
+
+var serialize = function(data) {
+	var res = '';
+	for(var i in data) {
+		res += i+'='+data[i]+'&';
+	}
+	return res.split('&').slice(0,-1).join('&');
 }
 
 var net = {
