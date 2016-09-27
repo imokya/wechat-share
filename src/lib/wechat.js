@@ -15,7 +15,7 @@ var Wechat = function(config) {
 		wxURL:'http://res.wx.qq.com/open/js/jweixin-1.0.0.js',
 		debug:false,
 		type:'post',
-		jsonp:false,
+		jsonp:true,
 		url:encodeURI(location.href),
 		data:{
 			link:location.href,
