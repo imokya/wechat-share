@@ -16,7 +16,7 @@ var Wechat = function(config) {
 		debug:false,
 		type:'post',
 		jsonp:true,
-		url:encodeURI(location.href),
+		url:encodeURIComponent(location.href),
 		data:{
 			link:location.href,
 			title:'',
