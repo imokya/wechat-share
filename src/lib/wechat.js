@@ -13,10 +13,10 @@ var Wechat = function(config) {
 	this.config = {
 		apiURL:'http://uniqueevents.sinaapp.com/wx/getJsAPIA2.php',
 		wxURL:'http://res.wx.qq.com/open/js/jweixin-1.0.0.js',
+		url:encodeURIComponent(location.href.split('#')[0]),
 		debug:false,
 		type:'post',
 		jsonp:true,
-		url:encodeURIComponent(location.href.split('#')[0]),
 		data:{
 			link:location.href,
 			title:'',
