@@ -33,6 +33,8 @@ config: {
 }
 ```
 ## 方法
+``` javascript
 ws.shareToFriend(data) //单独设置分享朋友数据
 ws.shareToTimeline(data) //单独设置分享朋友圈数据
 ws.shareToWeibo(data) //单独设置分享微博数据
+```
