@@ -8,13 +8,14 @@ interface WechatConfig {
   wxURL: string
   url: string
   type: string
-  jsonp: boolean
+  jsonp: boolean,
+  debug: boolean,
   data: any
 }
 
 class WechatShare {
 
-  private config: any
+  private config: WechatConfig
 
   constructor(config: WechatConfig) {
     const def = {
