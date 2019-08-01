@@ -1,19 +1,34 @@
 {
-  "name": "wechat",
+  "name": "wechat-share",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "webpack": "^1.13.2"
-  },
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config ./build/dev.config.js",
+    "build:dev": "webpack --config ./build/dev.config.js",
+    "build:prod": "webpack --config ./build/prod.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imokya/wechat-share.git"
   },
   "keywords": [
     "wechat",
     "share"
   ],
-  "author": "david xing",
-  "license": "ISC"
+  "author": "xingway",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imokya/wechat-share/issues"
+  },
+  "homepage": "https://github.com/imokya/wechat-share#readme",
+  "devDependencies": {
+    "html-webpack-plugin": "^3.2.0",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.3",
+    "webpack": "^4.38.0",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2",
+    "webpack-merge": "^4.2.1"
+  }
 }
