@@ -1,7 +1,7 @@
 # 微信分享
 简单，不依赖第三方库，支持jsonp跨域。
 
-## 使用方法
+## 使用
 1. 引入脚本
 ``` javascript
 <script src="dist/wechat.share.js"></script>
