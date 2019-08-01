@@ -8,7 +8,7 @@
 ```
 2. 初始化对象 
 ``` javascript
-new Wechat(config)
+const ws = new Wechat(config)
 ```
 
 ## 参数
@@ -32,3 +32,7 @@ config: {
    }
 }
 ```
+## 方法
+ws.shareToFriend(data) //单独设置分享朋友数据
+ws.shareToTimeline(data) //单独设置分享朋友圈数据
+ws.shareToWeibo(data) //单独设置分享微博数据
