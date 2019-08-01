@@ -1,2 +1,2 @@
 # 微信分享
-a wechat share module
+简单，不依赖第三方库，支持jsonp跨域。
