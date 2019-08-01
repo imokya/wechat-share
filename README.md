@@ -17,7 +17,7 @@ new Wechat(config)
 config: {
   apiURL: '', // 分享接口服务器地址
   wxURL: '//res.wx.qq.com/open/js/jweixin-1.4.0.js', //JSAPI地址
-  debug: false, 调试模式, 默认false
+  debug: false, 调试模式
   type: 'post', //请求类型
   jsonp: true, //jsonp跨域
   data: {
