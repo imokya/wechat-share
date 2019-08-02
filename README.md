@@ -8,7 +8,7 @@
 ```
 2. 初始化对象 
 ``` javascript
-const ws = new Wechat(config)
+const ws = new WechatShare(config)
 ```
 
 ## 参数
