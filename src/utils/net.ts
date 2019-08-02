@@ -15,7 +15,7 @@ const ajax = (params: RequestParams) => {
     const _callback = `Xing${_jsonpID}`
     params.trigger = false
     params.removeOnLoad = true
-    params.data.callback = _callback  
+    params.data.callback = _callback
     window[_callback] = function (data) {
       params.success && params.success(data)
       window[_callback] = null
@@ -65,7 +65,7 @@ const loadScript = (params: RequestParams) => {
 const serialize = (data: any) => {
   let res = ''
   for (let i in data) {
-    res += i + '=' + data[i] + '&'
+    res += `i=${data[i]}&`
   }
   return res.split('&').slice(0, -1).join('&')
 }
