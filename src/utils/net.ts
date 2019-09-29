@@ -65,7 +65,7 @@ const loadScript = (params: RequestParams) => {
 const serialize = (data: any) => {
   let res = ''
   for (let i in data) {
-    res += `i=${data[i]}&`
+    res += `${i}=${data[i]}&`
   }
   return res.split('&').slice(0, -1).join('&')
 }
