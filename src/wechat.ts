@@ -1,5 +1,6 @@
 import Net from './utils/net'
 import Config from './config'
+import { assign } from './utils/pollyfill'
 
 declare const wx
 
@@ -36,7 +37,7 @@ class WechatShare {
         complete: null
       }
     }
-    this.config = Object.assign({}, def, config)
+    this.config = assign({}, def, config)
     this.init()
   }
 
@@ -82,17 +83,17 @@ class WechatShare {
   }
 
   shareToFriend(_data: any) {
-    const data = Object.assign({}, this.config.data, _data)
+    const data = assign({}, this.config.data, _data)
     wx.updateAppMessageShareData(data)
   }
 
   shareToTimeline(_data: any) {
-    const data = Object.assign({}, this.config.data, _data)
+    const data = assign({}, this.config.data, _data)
     wx.updateTimelineShareData(data)
   }
 
   shareToWeibo(_data: any) {
-    const data = Object.assign({}, this.config.data, _data)
+    const data = assign({}, this.config.data, _data)
     wx.onMenuShareWeibo(data)
   }
 

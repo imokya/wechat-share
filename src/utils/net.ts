@@ -1,3 +1,5 @@
+import { assign } from '../utils/pollyfill'
+
 interface RequestParams {
   url: string
   type?: string
@@ -47,7 +49,7 @@ const loadScript = (params: RequestParams) => {
   const conf: any = {
     trigger: true
   }
-  Object.assign(conf, params)
+  assign(conf, params)
   var script = document.createElement('script');
   script.onload = function () {
     conf.trigger && conf.success && conf.success()
