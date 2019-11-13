@@ -1,8 +1,8 @@
 {
-  "name": "wechat-share",
+  "name": "@xingway/wechat-share",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/wechat.share.js",
   "scripts": {
     "start": "webpack-dev-server --config ./build/dev.config.js",
     "build:dev": "webpack --config ./build/dev.config.js",
