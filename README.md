@@ -2,9 +2,15 @@
 简单，不依赖第三方库，支持jsonp跨域。
 
 ## 使用
-1. 引入脚本
+1. 引入
 ``` javascript
+
+//页面引入
 <script src="dist/wechat.share.js"></script>
+
+//npm引入
+npm i @xingway/wechat-share --save
+
 ```
 2. 初始化对象 
 ``` javascript
