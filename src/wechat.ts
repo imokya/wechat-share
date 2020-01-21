@@ -89,26 +89,25 @@ class WechatShare {
   shareToFriend(_data: any) {
     const data:any = assign({}, this.config.data, _data)
     this._appData = data
-    try {
+    if (wx !== undefined) {
       wx.updateAppMessageShareData(data)
-    } catch(e) {}
+    }
   }
 
   shareToTimeline(_data: any) {
     const data:any = assign({}, this.config.data, _data)
     this._timelineData = data
-    try {
+    if (wx !== undefined) {
       wx.updateTimelineShareData(data)
-    } catch(e) {}
-    
+    }
   }
 
   shareToWeibo(_data: any) {
     const data:any = assign({}, this.config.data, _data)
     this._weiboData = data
-    try {
+    if (wx !== undefined) {
       wx.onMenuShareWeibo(data)
-    } catch(e) {}
+    }
   }
 
 }
