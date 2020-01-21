@@ -11,16 +11,15 @@ interface WechatConfig {
   type: string
   jsonp: boolean,
   debug: boolean,
-  data: any
+  data: any,
+  appData: any,
+  timelineData: any,
+  weiboData: any
 }
 
 class WechatShare {
 
   private config: WechatConfig
-
-  private _appData:any
-  private _timelineData:any
-  private _weiboData:any
 
   constructor(config: WechatConfig) {
     const def = {
@@ -39,7 +38,10 @@ class WechatShare {
         cancel: null,
         fail: null,
         complete: null
-      }
+      },
+      appData: null,
+      timelineData: null,
+      weiboData: null,
     }
     this.config = assign({}, def, config)
     this.init()
@@ -79,35 +81,26 @@ class WechatShare {
         jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareWeibo']
       });
       wx.ready(() => {
-        wx.updateAppMessageShareData(this._appData || this.config.data)
-        wx.updateTimelineShareData(this._timelineData || this.config.data)
-        wx.onMenuShareWeibo(this._weiboData || this.config.data)
+        wx.updateAppMessageShareData(this.config.appData || this.config.data)
+        wx.updateTimelineShareData(this.config.timelineData || this.config.data)
+        wx.onMenuShareWeibo(this.config.weiboData || this.config.data)
       })
     }
   }
 
   shareToFriend(_data: any) {
     const data:any = assign({}, this.config.data, _data)
-    this._appData = data
-    if (wx !== undefined) {
-      wx.updateAppMessageShareData(data)
-    }
+    wx.updateAppMessageShareData(data)
   }
 
   shareToTimeline(_data: any) {
     const data:any = assign({}, this.config.data, _data)
-    this._timelineData = data
-    if (wx !== undefined) {
-      wx.updateTimelineShareData(data)
-    }
+    wx.updateTimelineShareData(data)
   }
 
   shareToWeibo(_data: any) {
     const data:any = assign({}, this.config.data, _data)
-    this._weiboData = data
-    if (wx !== undefined) {
-      wx.onMenuShareWeibo(data)
-    }
+    wx.onMenuShareWeibo(data)
   }
 
 }
