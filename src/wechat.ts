@@ -18,6 +18,10 @@ class WechatShare {
 
   private config: WechatConfig
 
+  private _appData:any
+  private _timelineData:any
+  private _weiboData:any
+
   constructor(config: WechatConfig) {
     const def = {
       apiURL: Config.apiURL,
@@ -75,26 +79,29 @@ class WechatShare {
         jsApiList: ['updateAppMessageShareData', 'updateTimelineShareData', 'onMenuShareWeibo']
       });
       wx.ready(() => {
-        wx.updateAppMessageShareData(this.config.data)
-        wx.updateTimelineShareData(this.config.data)
-        wx.onMenuShareWeibo(this.config.data)
+        wx.updateAppMessageShareData(this._appData || this.config.data)
+        wx.updateTimelineShareData(this._timelineData || this.config.data)
+        wx.onMenuShareWeibo(this._weiboData || this.config.data)
       })
     }
   }
 
   shareToFriend(_data: any) {
     const data = assign({}, this.config.data, _data)
-    wx.updateAppMessageShareData(data)
+    wx && wx.updateAppMessageShareData(data)
+    this._appData = data
   }
 
   shareToTimeline(_data: any) {
     const data = assign({}, this.config.data, _data)
-    wx.updateTimelineShareData(data)
+    wx && wx.updateTimelineShareData(data)
+    this._timelineData = data
   }
 
   shareToWeibo(_data: any) {
     const data = assign({}, this.config.data, _data)
-    wx.onMenuShareWeibo(data)
+    wx && wx.onMenuShareWeibo(data)
+    this._weiboData = data
   }
 
 }
