@@ -24,7 +24,7 @@ params: {
   config?: {
     apiURL: '', // 分享接口服务器地址
     wxURL?: '//res.wx.qq.com/open/js/jweixin-1.6.0.js', //JSAPI地址
-    debug?: false, 调试模式
+    debug?: false, //调试模式
     jsApiList?: [
       'updateAppMessageShareData',
       'updateTimelineShareData',
