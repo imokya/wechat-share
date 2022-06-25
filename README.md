@@ -25,6 +25,21 @@ const params = {
   }
 }
 const ws = new WechatShare(params)
+
+//如需单独设置发送给朋友数据
+ws.shareToFriend({
+  title: '朋友分享标题',
+  desc: '朋友分享文案',
+  imgUrl: '朋友分享图片地址'
+})
+
+//如需单独设置朋友圈数据
+ws.shareToTimeline({
+  title: '朋友圈分享标题',
+  desc: '朋友圈分享文案',
+  imgUrl: '朋友圈分享图片地址'
+})
+
 ```
 
 ## params参数详细说明
