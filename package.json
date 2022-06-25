@@ -30,6 +30,7 @@
     "@babel/preset-typescript": "^7.17.12",
     "@babel/runtime": "^7.18.3",
     "@tsconfig/recommended": "^1.0.1",
+    "@types/fetch-jsonp": "^1.1.0",
     "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "html-webpack-plugin": "^5.5.0",
