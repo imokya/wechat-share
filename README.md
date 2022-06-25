@@ -29,8 +29,10 @@ const ws = new WechatShare(params)
 
 ## params参数详细说明，带问号为可选参数
 
-| config | data |
-| 配置参数 | 分享参数 |
+| config  | params |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 ``` javascript
 const params = {
