@@ -14,16 +14,29 @@ npm i @mayupai/wechat-share -S
 ```
 2. 初始化对象 
 ``` javascript
+const params = {
+  config: {
+    apiURL: '服务器端返回配置参数的地址'
+  },
+  data: {
+    title: '分享标题',
+    desc: '分享描述',
+    imgUrl: '分享图片地址'
+  }
+}
 const ws = new WechatShare(params)
 ```
 
-## 参数
+## params参数详细说明，带问号为可选参数
+
+| config | data |
+| 配置参数 | 分享参数 |
 
 ``` javascript
-params: {
+const params = {
   config?: {
     apiURL: '', // 分享接口服务器地址
-    wxURL?: '//res.wx.qq.com/open/js/jweixin-1.6.0.js', //JSAPI地址
+    wxURL?: '//res.wx.qq.com/open/js/jweixin-1.6.0.js', //JSAPI地址, 自动在当前页面引入
     debug?: false, //调试模式
     jsApiList?: [
       'updateAppMessageShareData',
@@ -31,7 +44,7 @@ params: {
       'onMenuShareWeibo'
     ]
   },
-  data: {
+  data?: {
     link?: location.href, //分享链接
     title?: '', //分享title
     desc?: '', //分享文案
@@ -41,7 +54,7 @@ params: {
   }
 }
 ```
-## 方法
+## 公共方法
 ``` javascript
 ws.shareToFriend(data) //单独设置分享朋友数据
 ws.shareToTimeline(data) //单独设置分享朋友圈数据
