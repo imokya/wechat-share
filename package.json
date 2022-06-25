@@ -1,0 +1,49 @@
+{
+  "name": "@mayu/wechat-share",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/wechat.share.js",
+  "scripts": {
+    "dev": "webpack server --progress --config config/dev.config.js",
+    "build": "webpack --progress --config config/prod.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imokya/wechat-share.git"
+  },
+  "keywords": [
+    "wechat",
+    "share"
+  ],
+  "author": "行歌",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imokya/wechat-share/issues"
+  },
+  "homepage": "https://github.com/imokya/wechat-share#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.5",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.17.12",
+    "@babel/plugin-proposal-optional-chaining": "^7.17.12",
+    "@babel/plugin-transform-runtime": "^7.18.5",
+    "@babel/preset-env": "^7.18.2",
+    "@babel/preset-typescript": "^7.17.12",
+    "@babel/runtime": "^7.18.3",
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/lodash-es": "^4.17.6",
+    "babel-loader": "^8.2.5",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-webpack-plugin": "^5.5.0",
+    "ts-loader": "^9.3.1",
+    "typescript": "^4.7.4",
+    "vconsole": "^3.14.6",
+    "webpack": "^5.73.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "dependencies": {
+    "fetch-jsonp": "^1.2.1",
+    "lodash-es": "^4.17.21"
+  }
+}

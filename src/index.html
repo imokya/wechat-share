@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wechat share</title>
+</head>
+
+<body>
+  <script src="wechat.share.js?v=1"></script>
+  <script>
+    var shareData = {
+      title: "分享标题1",
+      desc: "分享描述1",
+      link: location.href,
+      imgUrl: "https://www.xinapp.net/demo/img/share.jpg",
+    };
+    const ws = new WechatShare({
+      config: {
+        debug: false
+      },
+      data: shareData
+    });
+    setTimeout(() => {
+      ws.shareToFriend({
+        title: '分享标题2',
+        desc: '分享描述2'
+      })
+    }, 2000)
+  </script>
+</body>
+
+</html>
