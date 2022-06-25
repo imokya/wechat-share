@@ -1,6 +1,6 @@
 {
   "name": "@mayupai/wechat-share",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "",
   "main": "dist/wechat.share.js",
   "scripts": {
