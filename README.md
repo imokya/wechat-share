@@ -61,6 +61,7 @@ print $callback.'({"appId":"'.$signPackage["appId"].'", "timestamp":"'.$signPack
 | debug | (可选）是否开启调试 |
 | jsApiList | (可选）jsApi列表，需要用到的sdk在这里引入 |
 
+
 | data对象参数  | 描述 |
 | ------------- | ------------- |
 | link | (可选）分享地址，默认为当前页 |
