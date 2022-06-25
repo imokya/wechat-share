@@ -41,6 +41,16 @@ ws.shareToTimeline({
 })
 
 ```
+## 服务器端apiURL返回数据说明，以PHP脚本为例
+```php
+require_once "jssdk.php";
+$callback = $_REQUEST['callback'];
+$url = $_REQUEST['url'];
+$jssdk = new JSSDK(APP_ID, APP_SECRET);
+$signPackage = $jssdk->GetSignPackage($url);
+print $callback.'({"result":1,"appId":"'.$signPackage["appId"].'", "timestamp":"'.$signPackage["timestamp"].'","nonceStr":"'.$signPackage["nonceStr"].'","signature":"'.$signPackage["signature"].'", "url":"'.$url.'"})';
+
+```
 
 ## params参数详细说明
 
