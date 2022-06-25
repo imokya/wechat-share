@@ -20,26 +20,38 @@ const params = {
   },
   data: {
     title: '分享标题',
-    desc: '分享描述',
+    desc: '分享文案',
     imgUrl: '分享图片地址'
   }
 }
 const ws = new WechatShare(params)
 ```
 
-## params参数详细说明，带问号为可选参数
+## params参数详细说明
 
-| config  | data |
+| config对象参数  | 描述 |
 | ------------- | ------------- |
-| 配置参数 | 三种分享方式公用数据参数，也可以单独设置  |
+| apiURL | 服务器端返回配置参数的地址 |
+| wxURL | (可选）JSAPI地址, 会自动在当前页面引入 |
+| debug | (可选）是否开启调试 |
+| jsApiList | (可选）jsApi列表，需要用到的sdk在这里引入 |
+
+| data对象参数  | 描述 |
+| ------------- | ------------- |
+| link | (可选）分享地址，默认为当前页 |
+| title | (可选）分享标题 |
+| desc | (可选）分享标题 |
+| imgUrl | (可选）分享图片地址 |
+| success | (可选）成功回调 |
+| cancel | (可选）取消回调 |
 
 
 ``` javascript
 const params = {
   config?: {
-    apiURL: '', // 分享接口服务器地址
+    apiURL: '', // 服务器端返回配置参数的地址
     wxURL?: '//res.wx.qq.com/open/js/jweixin-1.6.0.js', //JSAPI地址, 自动在当前页面引入
-    debug?: false, //调试模式
+    debug?: false, //是否开启调试
     jsApiList?: [
       'updateAppMessageShareData',
       'updateTimelineShareData',
@@ -47,16 +59,16 @@ const params = {
     ]
   },
   data?: {
-    link?: location.href, //分享链接
-    title?: '', //分享title
+    link?: location.href, //分享链接，默认为当前页面
+    title?: '', //分享标题
     desc?: '', //分享文案
-    imgUrl?: '', //分享图片
+    imgUrl?: '', //分享图片地址
     success?: null, //成功回调
     cancel?: null, //取消回调
   }
 }
 ```
-## 公共方法
+## 公有方法
 ``` javascript
 ws.shareToFriend(data) //单独设置分享朋友数据
 ws.shareToTimeline(data) //单独设置分享朋友圈数据
