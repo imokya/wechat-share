@@ -6,6 +6,5 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
-  },
-  "extends": "@tsconfig/recommended/tsconfig.json"
+  }
 }

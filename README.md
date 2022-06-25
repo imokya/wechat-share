@@ -9,7 +9,7 @@
 <script src="dist/wechat.share.js"></script>
 
 //npm引入
-npm i @mayu/wechat-share -S
+npm i @mayupai/wechat-share -S
 
 ```
 2. 初始化对象 
