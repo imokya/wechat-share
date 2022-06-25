@@ -1,5 +1,5 @@
 # 微信分享
-简单，不依赖第三方库，支持jsonp跨域。
+简单，不依赖第三方库，支持jsonp跨域。  
 
 ## 使用
 1. 引入
@@ -9,7 +9,7 @@
 <script src="dist/wechat.share.js"></script>
 
 //npm引入
-npm i @mayupai/wechat-share -S
+npm i @mayupai/wechat-share -S  
 
 ```
 2. 初始化对象 
@@ -50,7 +50,7 @@ $jssdk = new JSSDK(APP_ID, APP_SECRET);
 $signPackage = $jssdk->GetSignPackage($url);
 print $callback.'({"appId":"'.$signPackage["appId"].'", "timestamp":"'.$signPackage["timestamp"].'","nonceStr":"'.$signPackage["nonceStr"].'","signature":"'.$signPackage["signature"].'"})';
 
-```
+```  
 
 ## params参数详细说明
 
@@ -59,8 +59,7 @@ print $callback.'({"appId":"'.$signPackage["appId"].'", "timestamp":"'.$signPack
 | apiURL | 服务器端返回配置参数的地址 |
 | wxURL | (可选）JSAPI地址, 会自动在当前页面引入 |
 | debug | (可选）是否开启调试 |
-| jsApiList | (可选）jsApi列表，需要用到的sdk在这里引入 |
-
+| jsApiList | (可选）jsApi列表，需要用到的sdk在这里引入 |  
 
 | data对象参数  | 描述 |
 | ------------- | ------------- |
@@ -69,8 +68,7 @@ print $callback.'({"appId":"'.$signPackage["appId"].'", "timestamp":"'.$signPack
 | desc | (可选）分享标题 |
 | imgUrl | (可选）分享图片地址 |
 | success | (可选）成功回调 |
-| cancel | (可选）取消回调 |
-
+| cancel | (可选）取消回调 |  
 
 ``` javascript
 const params = {
@@ -92,7 +90,8 @@ const params = {
     success?: null, //成功回调
     cancel?: null, //取消回调
   }
-}
+}  
+
 ```
 ## 公有方法
 ``` javascript
